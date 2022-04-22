@@ -1,10 +1,12 @@
-f = open('input', mode="rt", encoding="utf-8")
+f = open('input')
+text = f.read().split()
 o2 = []
 co2 = []
-for l in f:
+for l in text:
     o2.append((l))
     co2.append((l))
 f.close()
+print(o2)
 
 def getBits(list, position):
     c0 = 0
@@ -18,9 +20,12 @@ def getBits(list, position):
         return 0, position
     else:
         return 1, position
-x, y = getBits(o2, 3)
-print(x, y)
 
-#TODO: if len list = 2 ...
-#TODO: def bitsCounter
-#TODO: def clearList
+def clearList(list, bit, position):
+    return [x for x in list if int(x[position]) == bit]
+
+x, y = getBits(o2, 0)
+m = clearList(o2, x, y)
+
+# if len list = 2 ...
+# def clearList
