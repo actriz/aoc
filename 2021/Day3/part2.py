@@ -6,7 +6,6 @@ for l in text:
     o2.append((l))
     co2.append((l))
 f.close()
-print(o2)
 
 def getBits(list, position):
     c0 = 0
@@ -21,11 +20,15 @@ def getBits(list, position):
     else:
         return 1, position
 
-def clearList(list, bit, position):
+def clearList(list, position, bit):
     return [x for x in list if int(x[position]) == bit]
 
 x, y = getBits(o2, 0)
-m = clearList(o2, x, y)
+clearList(o2, y, x)
 
 # if len list = 2 ...
-# def clearList
+# for i in range(2)
+    # for x in range(len(list[x]))
+        # if len list = 2 ...
+        # def
+        # def
