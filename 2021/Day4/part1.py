@@ -28,5 +28,5 @@ def checkWin():
 
 numbers, c = createLists(f)
 cartons = correctCartons(c)
-changed = checknumber(numbers[0], cartons)
-print(changed)
+change = checknumber(numbers[0], cartons)
+print(change)
