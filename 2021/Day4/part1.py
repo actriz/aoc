@@ -15,7 +15,7 @@ def correctCartons(listado):
         finalCartons.append(output)
     return finalCartons
 
-def checknumber(integer, game):
+def markBingo(integer, game):
     for c in range(len(game)):
         for f in range(len(game[c])):
             for n in range(len(game[c][f])):
@@ -26,7 +26,10 @@ def checknumber(integer, game):
 def checkWin():
     pass
 
+# Bingo Numbers + Cartons
 numbers, c = createLists(f)
 cartons = correctCartons(c)
-change = checknumber(numbers[0], cartons)
-print(change)
+
+# LOOP
+markBingo(numbers[0], cartons)
+checkWin()
