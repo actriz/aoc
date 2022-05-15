@@ -23,13 +23,12 @@ def markBingo(integer, game):
                     game[c][f][n] = 'X'
     return game
 
-def checkWin():
+def checkWin(joses):
     pass
 
-# Bingo Numbers + Cartons
 numbers, c = createLists(f)
 cartons = correctCartons(c)
 
-# LOOP
-markBingo(numbers[0], cartons)
-checkWin()
+for i in range(len(numbers)):
+    markBingo(numbers[i], cartons)
+    checkWin(cartons)
