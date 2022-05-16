@@ -23,12 +23,21 @@ def markBingo(integer, game):
                     game[c][f][n] = 'X'
     return game
 
-def checkWin(joses):
-    pass
+def checkWin(joses, n):
+    """for c in joses:
+        for f in c:
+            if all(i == 'X' for i in f):
+                return c, n"""
+    
+    for c in joses:
+        for f in c:
+            print(f)
+        print()
+    
 
 numbers, c = createLists(f)
 cartons = correctCartons(c)
 
-for i in range(len(numbers)):
+for i in range(12):
     markBingo(numbers[i], cartons)
-    checkWin(cartons)
+    checkWin(cartons, numbers[i])
