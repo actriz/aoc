@@ -1,14 +1,14 @@
 with open('input') as i:
     gamma = ""
     epsilon = ""
-    file = i.read().split()
-    TotalLen = len(file)
-    ElementLen = len(file[0])
-    for i in range(ElementLen):
+    f = i.read().split()
+    fullLen = len(f)
+    elementLen = len(f[0])
+    for i in range(elementLen):
         c0 = 0
         c1 = 0
-        for j in range(TotalLen):
-            x=int(file[j][i])
+        for j in range(fullLen):
+            x=int(f[j][i])
             if x == 0:
                 c0 += 1
             elif x == 1:
@@ -19,5 +19,4 @@ with open('input') as i:
         else:
             gamma += "1"
             epsilon += "0"
-answer = int(gamma, 2) * int(epsilon, 2)
-print(answer)
+print(int(gamma, 2) * int(epsilon, 2))

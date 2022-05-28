@@ -1,14 +1,13 @@
 with open('input') as i:
-    nums = []
-    for line in i:
-        x = int(line)
-        nums.append(x)
-
-acumNum = (nums[0]+nums[1]+nums[3])
-acumIncreased = 0
-for x in range(len(nums)-2):
-    acumNew = (nums[x] + nums[x+1] + nums[x+2])
-    if acumNew > acumNum:
-        acumIncreased += 1
-    acumNum = acumNew
-print(acumIncreased)
+    ns = []
+    for l in i:
+        x = int(l)
+        ns.append(x)
+acNums = (ns[0]+ns[1]+ns[3])
+Increased = 0
+for x in range(len(ns)-2):
+    acumNew = (ns[x] + ns[x+1] + ns[x+2])
+    if acumNew > acNums:
+        Increased += 1
+    acNums = acumNew
+print(Increased)

@@ -52,5 +52,4 @@ for x in range(len(co2[0])):
 
 n_o2 = int(o2[0],2)
 n_co2 = int(co2[0],2)
-r = n_o2 * n_co2
-print(r)
+print(n_o2 * n_co2)
