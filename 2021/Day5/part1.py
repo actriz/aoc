@@ -25,40 +25,13 @@ def cMatrix(xy):
     return m
 
 def gInterlude(jose):
-    x1 = int(jose[0][0])
-    y1 = int(jose[0][1])
-    x2 = int(jose[1][0])
-    y2 = int(jose[1][1])
-    interlude = [jose[0], jose[1]]
-
-    if x1 < x2:
-        for x in range(x1, x2+1):
-            print(x)
-        print()
-    if x1 > x2:
-        for x in range(x1, x2-1, -1):
-            print(x)
-        print()
-    if x1 == x2:
-        print(x1)
-
-    if y1 < y2:
-        for x in range(y1, y2+1):
-            print(x)
-        print()
-    if y1 > y2:
-        for x in range(y1, y2-1, -1):
-            print(x)
-        print()
-    if y1 == y2:
-        print(x1)
     # List comprehension x and y
-    # max or min
+    # max/min
     # zip
+    # diff ranges
 
 r = gRanges(f)
 m = cMatrix(r)
 
-c = 0
-for i in range(3):
+for i in range(1):
     gInterlude(r[i])
