@@ -46,9 +46,6 @@ def interlude(jose):
             ys.append(y)
     else:
         ys.append(y1)
-    
-    print(xs.sort())
-    print(ys.sort())
 
 r = ranges(f)
 m = matrix(r)
