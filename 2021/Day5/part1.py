@@ -1,8 +1,3 @@
-#ranges = [
-#    [['x1','y1'],['x2','y2']]
-#    []
-#    []
-#   ]
 f = open('input').read().splitlines()
 
 def ranges(l):
@@ -51,28 +46,12 @@ def interlude(jose):
             ys.append(y)
     else:
         ys.append(y1)
-
-    try:
-        for a, b in enumerate(xs):
-            interlude.append([b, ys[a % len(ys)]])
-    except:
-        for a, b in enumerate(ys):
-            interlude.append([b, xs[a % len(xs)]])
     
-    return interlude
-
-def mark(mawik, aron):
-    for e in mawik:
-        y, x = e
-        try:
-            aron[y][x-1] += 1
-        except:
-            aron[y-1][x] += 1
+    print(xs.sort())
+    print(ys.sort())
 
 r = ranges(f)
 m = matrix(r)
 
 for i in range(len(r)):
-    i = interlude(r[i])
-    mark(i, m)
-print(m)
+   interlude(r[i])
