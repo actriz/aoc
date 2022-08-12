@@ -1,3 +1,15 @@
+"""
+0,9 -> 5,9
+8,0 -> 0,8
+9,4 -> 3,4
+2,2 -> 2,1
+7,0 -> 7,4
+6,4 -> 2,0
+0,9 -> 2,9
+3,4 -> 1,4
+0,0 -> 8,8
+5,5 -> 8,2
+"""
 f = open('input').read().splitlines()
 
 def ranges(l):
@@ -20,32 +32,24 @@ def matrix(xy):
     return m
 
 def interlude(jose):
-    interlude = [[int(n1), int(n2)] for n1, n2 in jose]
-    x1 = int(jose[0][0])
-    y1 = int(jose[0][1])
-    x2 = int(jose[1][0])
-    y2 = int(jose[1][1])
+    interlude = []
+    [[x1,y1],[x2,y2]] = jose
 
-    xs = []
-    ys = []
+    if int(y1)==int(y2):
+        if int(x1)<int(x2):
+            for i in range(int(x1),int(x2)+1):
+                interlude.append([i, y1])
+        else:
+            for i in range(int(x2),int(x1)+1):
+                interlude.append([i, y1])
 
-    if x1 < x2:
-        for x in range(x1+1, x2):
-            xs.append(x)
-    elif x1 > x2:
-        for y in range(x1-1, x2,-1):
-            xs.append(y)
-    else:
-        xs.append(x1)
-    
-    if y1 < y2:
-        for x in range(y1+1, y2):
-            ys.append(x)
-    elif y1 > y2:
-        for y in range(y1-1, y2,-1):
-            ys.append(y)
-    else:
-        ys.append(y1)
+    if int(x1)==int(x2):
+        if int(y1)<int(y2):
+            for i in range(int(y1),int(y2)+1):
+                interlude.append([i, x1])
+        else:
+            for i in range(int(y2),int(y1)+1):
+                interlude.append([i, x1])
 
 r = ranges(f)
 m = matrix(r)
