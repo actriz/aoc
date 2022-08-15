@@ -89,9 +89,7 @@ r = ranges(f)
 m = matrix(r)
 
 for i in range(len(r)):
-    [[x1, x2], [y1, y2]] = r[i]
-    if x1 == y1 or x2 == y2:
-        i = interlude(r[i])
-        mark(m, i)
+    i = interlude(r[i])
+    mark(m, i)
 end = check(m)
 print(end)
