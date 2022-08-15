@@ -1,15 +1,3 @@
-"""
-0,9 -> 5,9
-8,0 -> 0,8
-9,4 -> 3,4
-2,2 -> 2,1
-7,0 -> 7,4
-6,4 -> 2,0
-0,9 -> 2,9
-3,4 -> 1,4
-0,0 -> 8,8
-5,5 -> 8,2
-"""
 f = open('input').read().splitlines()
 
 def ranges(l):
@@ -101,7 +89,12 @@ r = ranges(f)
 m = matrix(r)
 
 for i in range(len(r)):
-   i = interlude(r[i])
-   mark(m, i)
+    # PART 1 OFF DIAGONALS
+    #[[x1, x2], [y1, y2]] = r[i]
+    #if x1 == y1 or x2 == y2:
+    
+    # PART 2 ON DIAGONALS
+    i = interlude(r[i])
+    mark(m, i)
 end = check(m)
 print(end)
