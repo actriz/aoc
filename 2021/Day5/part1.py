@@ -28,7 +28,7 @@ def matrix(xy):
                 x = int(e[0])
             if int(e[1]) > y:
                 y = int(e[1])
-    m = [[0 for _ in range(x)] for _ in range(y)]
+    m = [[0 for _ in range(x+1)] for _ in range(y+1)]
     return m
 
 def xyz(x1,y1,x2,y2):
@@ -87,7 +87,15 @@ def interlude(jose):
 def mark(mawik, aron):
     for n in aron:
         x, y = n
-        mawik[y-1][x-1] += 1
+        mawik[y][x] += 1
+
+def check(table):
+    c = 0
+    for h in table:
+        for n in h:
+            if n >= 2:
+                c += 1
+    return c
 
 r = ranges(f)
 m = matrix(r)
@@ -95,3 +103,5 @@ m = matrix(r)
 for i in range(len(r)):
    i = interlude(r[i])
    mark(m, i)
+end = check(m)
+print(end)
