@@ -83,7 +83,7 @@ def check(table):
         for n in h:
             if n >= 2:
                 c += 1
-    return c
+    print(c)
 
 r = ranges(f)
 m = matrix(r)
@@ -91,5 +91,4 @@ m = matrix(r)
 for i in range(len(r)):
     i = interlude(r[i])
     mark(m, i)
-end = check(m)
-print(end)
+check(m)

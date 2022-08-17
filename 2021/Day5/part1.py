@@ -83,7 +83,7 @@ def check(table):
         for n in h:
             if n >= 2:
                 c += 1
-    return c
+    print(c)
 
 r = ranges(f)
 m = matrix(r)
@@ -93,5 +93,4 @@ for i in range(len(r)):
     if x1 == y1 or x2 == y2:
         i = interlude(r[i])
         mark(m, i)
-end = check(m)
-print(end)
+check(m)
