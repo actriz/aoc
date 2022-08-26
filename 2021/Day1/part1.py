@@ -1,8 +1,5 @@
 with open('input') as i:
-    ns = []
-    for l in i:
-        x = int(l)
-        ns.append(x)
+    ns = [int(l) for l in i]
     inc = 0
     n = ns[0]
     for x in ns:
