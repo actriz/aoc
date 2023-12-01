@@ -1,34 +1,38 @@
 import numpy as np
 
-f = open('input').read().split()
+f = open("input").read().split()
+
 
 def createLists(listado):
     n = 25
-    numbers = listado[0].split(',')
-    cartons = [listado[i:i+n] for i in range(1, len(listado), n)]
+    numbers = listado[0].split(",")
+    cartons = [listado[i : i + n] for i in range(1, len(listado), n)]
     return numbers, cartons
+
 
 def correctCartons(listado):
     finalCartons = []
     n = 5
     for x in range(len(listado)):
         tempList = listado[x]
-        output = [tempList[i:i+n] for i in range(0, len(tempList), n)]
+        output = [tempList[i : i + n] for i in range(0, len(tempList), n)]
         finalCartons.append(output)
     return finalCartons
+
 
 def markBingo(integer, game):
     for c in range(len(game)):
         for f in range(len(game[c])):
             for n in range(len(game[c][f])):
                 if game[c][f][n] == integer:
-                    game[c][f][n] = 'X'
+                    game[c][f][n] = "X"
     return game
+
 
 def checkWin(joses, n):
     for c in joses:
         for f in c:
-            if all(i == 'X' for i in f):
+            if all(i == "X" for i in f):
                 cartons.remove(c)
                 ws.append(c)
                 ns.append(n)
@@ -37,18 +41,20 @@ def checkWin(joses, n):
         a = [f for f in c]
         x = np.transpose(a)
         for i in x:
-            if all(n == 'X' for n in i):
+            if all(n == "X" for n in i):
                 cartons.remove(c)
                 ws.append(c)
                 ns.append(n)
+
 
 def winner(sufle, mawik):
     s = 0
     for x in sufle:
         for n in x:
-            if n != 'X':
+            if n != "X":
                 s += int(n)
-    print(s*int(mawik))
+    print(s * int(mawik))
+
 
 numbers, c = createLists(f)
 cartons = correctCartons(c)

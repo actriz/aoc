@@ -1,4 +1,4 @@
-with open('input') as i:
+with open("input") as i:
     ns = [int(l) for l in i]
     inc = 0
     n = ns[0]

@@ -1,4 +1,4 @@
-with open('input') as i:
+with open("input") as i:
     gamma = ""
     epsilon = ""
     f = i.read().split()
@@ -8,7 +8,7 @@ with open('input') as i:
         c0 = 0
         c1 = 0
         for j in range(fullLen):
-            x=int(f[j][i])
+            x = int(f[j][i])
             if x == 0:
                 c0 += 1
             elif x == 1:
